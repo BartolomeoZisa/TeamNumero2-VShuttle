@@ -25,3 +25,6 @@ se c'è incertezza conferma umana: 2 secondi per premere OVERRIDE o CONFERMA, se
 fermata automatica
 rosso per fermarsi, verde per procedere, giallo per attenzione
 nessun gergo tecnico
+
+
+dati -> pulizia -> fusione  -> parsing -> azione
