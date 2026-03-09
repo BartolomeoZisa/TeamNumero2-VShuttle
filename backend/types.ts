@@ -1,3 +1,8 @@
+// ==========================================
+// 1. DEFINIZIONE DEI TIPI
+// ==========================================
+
+
 type SensorName = 'camera_frontale' | 'camera_laterale' | 'V2I_receiver';
 
 interface SensorData {

@@ -102,7 +102,7 @@ if (require.main === module) {
   console.log(`Output scritto con successo in: ${outPath}\n`);
 
   // Simuliamo di srotolare i primi 3 per testare il generatore in CLI
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 74; i++) {
     const nextItem = simEngine.next();
     if (!nextItem.done) {
       console.log(`[Scenario ID: ${nextItem.value.id_scenario}] --> Action: ${nextItem.value.action}`);

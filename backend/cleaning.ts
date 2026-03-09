@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
+
 // Carica la lista di stringhe ammissibili dal JSON (modificabile dall'utente)
 const ADMISSIBLE_SIGNS_PATH = path.join(__dirname, 'admissible_signs.json');
 let admissibleSigns: string[] = [];
