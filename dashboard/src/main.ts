@@ -108,9 +108,8 @@ async function fetchScenarios() {
       return {
         id: item.id_scenario,
         parsedText: item.reason,
-        action: item.action === 'INTERVENT' ? 'INTERVENTO' : item.action, // Normalize backend 'INTERVENT' to frontend 'INTERVENTO'
-        // Optional: derive uncertainAction context from backend raw text if needed, for now default to STOP
-        uncertainAction: (item.action === 'INTERVENTO' || item.action === 'INTERVENT') ? 'STOP' : undefined,
+        action: confidencePercent < 90 ? 'INTERVENTO' : item.action,
+        uncertainAction: item.action, // The actual action that we want to override
         confidenceNum: confidencePercent,
         confidenceLevel: level
       } as Scenario;
@@ -159,10 +158,20 @@ function renderScenario(scenario: Scenario) {
   else if (scenario.action === 'STOP') sysStatusIndicator.classList.add('bg-red-500');
   else sysStatusIndicator.classList.add('bg-amber-500');
 
+  // Aggiorna lo sfondo globale per rendere più accentuato il colore (Verde/Rosso)
+  document.body.className = 'text-white font-sans antialiased h-screen flex flex-col overflow-hidden transition-colors duration-500';
+  if (scenario.action === 'GO') {
+    document.body.classList.add('bg-green-900');
+  } else if (scenario.action === 'STOP') {
+    document.body.classList.add('bg-red-950');
+  } else {
+    document.body.classList.add('bg-gray-900');
+  }
+
   // Parsed Text
   parsedTextEl.textContent = scenario.parsedText;
   parsedTextEl.className = 'text-4xl leading-tight font-medium text-center max-w-3xl drop-shadow-sm transition-all duration-300';
-  if (scenario.action === 'GO') parsedTextEl.classList.add('text-white');
+  if (scenario.action === 'GO') parsedTextEl.classList.add('text-green-100');
   else if (scenario.action === 'STOP') parsedTextEl.classList.add('text-red-100');
   else parsedTextEl.classList.add('text-amber-100');
 
@@ -222,6 +231,7 @@ function requestHumanIntervention() {
     overlaySuggestedAction.textContent = `AZIONE PREVISTA: ${currentScenario.uncertainAction}`;
     overlaySuggestedAction.className = `text-5xl font-black mb-12 drop-shadow-lg uppercase tracking-widest ${currentScenario.uncertainAction === 'STOP' ? 'text-red-500' : 'text-green-500'}`;
   } else {
+    // Non avverrà mai se triggeriamo l'intervento solo su INTERVENTO
     overlaySuggestedAction.textContent = `Azione: ${currentScenario.action}`;
     overlaySuggestedAction.className = `text-6xl font-black mb-12 drop-shadow-lg uppercase tracking-widest ${currentScenario.action === 'STOP' ? 'text-red-500' : 'text-green-500'}`;
   }
