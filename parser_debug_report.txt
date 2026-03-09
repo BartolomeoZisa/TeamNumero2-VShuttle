@@ -1,0 +1,54 @@
+=== VSHUTTLE PARSER DEBUG REPORT ===
+
+[PASS] Test #1 - Divieto Navetta Esplicita
+  [In] Cartello: "DIVIETO DI TRANSITO NAVETTE L4" | Contesto: Lunedì 12:00
+  [Ut] Azione Attesa: STOP | Azione Ricevuta: STOP
+  [Rt] Causale Parser: Vietato: DIVIETO DI TRANSITO NAVETTE L4
+  --------------------------------------------------
+[PASS] Test #2 - Divieto Eccetto Navetta (Semplice)
+  [In] Cartello: "DIVIETO DI ACCESSO ECCETTO BUS" | Contesto: Martedì 10:00
+  [Ut] Azione Attesa: GO | Azione Ricevuta: GO
+  [Rt] Causale Parser: Consentito per la navetta L4: DIVIETO DI ACCESSO ECCETTO BUS
+  --------------------------------------------------
+[PASS] Test #3 - ZTL Fuori Orario (Divieto ma non attivo)
+  [In] Cartello: "ZTL ATTIVA 08:00 - 20:00" | Contesto: Mercoledì 22:00
+  [Ut] Azione Attesa: GO | Azione Ricevuta: GO
+  [Rt] Causale Parser: Il segnale 'ZTL ATTIVA 08:00 - 20:00' non è attualmente attivo (Mercoledì 22:00)
+  --------------------------------------------------
+[PASS] Test #4 - ZTL In Orario (Divieto attivo)
+  [In] Cartello: "ZTL ATTIVA 08:00 - 20:00" | Contesto: Giovedì 15:00
+  [Ut] Azione Attesa: STOP | Azione Ricevuta: STOP
+  [Rt] Causale Parser: Vietato: ZTL ATTIVA 08:00 - 20:00
+  --------------------------------------------------
+[PASS] Test #5 - ZTL Notturna Scavallo
+  [In] Cartello: "ZTL NOTTURNA 23:00-05:00" | Contesto: Domenica 02:00
+  [Ut] Azione Attesa: STOP | Azione Ricevuta: STOP
+  [Rt] Causale Parser: Vietato: ZTL NOTTURNA 23:00-05:00
+  --------------------------------------------------
+[FAIL] Test #6 - Mercato Rionale (Regex range ore e giorno)
+  [In] Cartello: "MERCATO RIONALE VENERDI 06:00-14:00" | Contesto: Venerdì 10:30
+  [Ut] Azione Attesa: STOP | Azione Ricevuta: GO
+  [Rt] Causale Parser: Percorso consentito: MERCATO RIONALE VENERDI 06:00-14:00
+  --------------------------------------------------
+[PASS] Test #7 - Mercato Rionale Fuori Giorno
+  [In] Cartello: "MERCATO RIONALE VENERDI 06:00-14:00" | Contesto: Giovedì 10:30
+  [Ut] Azione Attesa: GO | Azione Ricevuta: GO
+  [Rt] Causale Parser: Percorso consentito: MERCATO RIONALE VENERDI 06:00-14:00
+  --------------------------------------------------
+[PASS] Test #8 - Attenzione Blanda
+  [In] Cartello: "LAVORI IN CORSO A 100M" | Contesto: Lunedì 12:00
+  [Ut] Azione Attesa: INTERVENT | Azione Ricevuta: INTERVENT
+  [Rt] Causale Parser: Moderare la velocità, LAVORI IN CORSO A 100M
+  --------------------------------------------------
+[PASS] Test #9 - Varco Non Attivo Esplicito
+  [In] Cartello: "ZTL VARCO NON ATTIVO" | Contesto: Lunedì 12:00
+  [Ut] Azione Attesa: GO | Azione Ricevuta: GO
+  [Rt] Causale Parser: Il segnale 'ZTL VARCO NON ATTIVO' non è attualmente attivo (Lunedì 12:00)
+  --------------------------------------------------
+[PASS] Test #10 - Test pattern order-agnostic
+  [In] Cartello: "DALLE 20 ALLE 06 ZTL" | Contesto: Sabato 23:00
+  [Ut] Azione Attesa: STOP | Azione Ricevuta: STOP
+  [Rt] Causale Parser: Vietato: DALLE 20 ALLE 06 ZTL
+  --------------------------------------------------
+
+Risultato Totale: 9 / 10 PASSATI.
