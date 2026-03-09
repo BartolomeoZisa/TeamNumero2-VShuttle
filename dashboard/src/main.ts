@@ -158,14 +158,28 @@ function renderScenario(scenario: Scenario) {
   else if (scenario.action === 'STOP') sysStatusIndicator.classList.add('bg-red-500');
   else sysStatusIndicator.classList.add('bg-amber-500');
 
-  // Aggiorna lo sfondo globale per rendere più accentuato il colore (Verde/Rosso)
-  document.body.className = 'text-white font-sans antialiased h-screen flex flex-col overflow-hidden transition-colors duration-500';
+  // Tinta globale schermata (body + pannelli) in base all'azione
+  const bodyBase = 'text-white font-sans antialiased h-screen flex flex-col overflow-hidden transition-colors duration-500';
+  const panelBase = 'rounded-xl p-0 shadow-lg border flex flex-col transition-colors duration-500';
+  const panelLeft  = document.getElementById('panel-left');
+  const panelRight = document.getElementById('panel-right');
+
   if (scenario.action === 'GO') {
-    document.body.classList.add('bg-green-900');
+    document.body.className = bodyBase + ' state-go';
+    panelLeft?.classList.replace('panel-stop', 'panel-go');
+    panelLeft?.classList.add('panel-go');
+    panelRight?.classList.replace('panel-stop', 'panel-go');
+    panelRight?.classList.add('panel-go');
   } else if (scenario.action === 'STOP') {
-    document.body.classList.add('bg-red-950');
+    document.body.className = bodyBase + ' state-stop';
+    panelLeft?.classList.replace('panel-go', 'panel-stop');
+    panelLeft?.classList.add('panel-stop');
+    panelRight?.classList.replace('panel-go', 'panel-stop');
+    panelRight?.classList.add('panel-stop');
   } else {
-    document.body.classList.add('bg-gray-900');
+    document.body.className = bodyBase + ' state-neutral';
+    panelLeft?.classList.remove('panel-go', 'panel-stop');
+    panelRight?.classList.remove('panel-go', 'panel-stop');
   }
 
   // Parsed Text
@@ -227,14 +241,14 @@ function requestHumanIntervention() {
   const currentScenario = liveScenarios[currentScenarioIndex];
   const overlaySuggestedAction = document.getElementById('overlay-suggested-action') as HTMLDivElement;
 
-  if (currentScenario.action === 'INTERVENTO') {
-    overlaySuggestedAction.textContent = `AZIONE PREVISTA: ${currentScenario.uncertainAction}`;
-    overlaySuggestedAction.className = `text-5xl font-black mb-12 drop-shadow-lg uppercase tracking-widest ${currentScenario.uncertainAction === 'STOP' ? 'text-red-500' : 'text-green-500'}`;
-  } else {
-    // Non avverrà mai se triggeriamo l'intervento solo su INTERVENTO
-    overlaySuggestedAction.textContent = `Azione: ${currentScenario.action}`;
-    overlaySuggestedAction.className = `text-6xl font-black mb-12 drop-shadow-lg uppercase tracking-widest ${currentScenario.action === 'STOP' ? 'text-red-500' : 'text-green-500'}`;
-  }
+  // Mostra SEMPRE l'azione reale del backend che stiamo per confermare o annullare.
+  // uncertainAction è impostato dal fetchScenarios e contiene l'action originale (GO/STOP/INTERVENT).
+  const actionToDisplay = currentScenario.uncertainAction ?? currentScenario.action;
+  const isStop = actionToDisplay === 'STOP';
+  overlaySuggestedAction.textContent = `AZIONE PREVISTA: ${actionToDisplay}`;
+  overlaySuggestedAction.className = `text-5xl font-black mb-12 drop-shadow-lg uppercase tracking-widest ${
+    isStop ? 'text-red-400' : 'text-green-400'
+  }`;
 
   countdownInterval = window.setInterval(() => {
     currentCountdown -= 0.1;
@@ -263,10 +277,12 @@ function handleHumanIntervention(decision: 'OVERRIDE' | 'CONFERMA') {
   sysStatusText.classList.replace('bg-amber-600', 'bg-green-600');
 
   const currentScenario = liveScenarios[currentScenarioIndex];
-  let finalAction = currentScenario.uncertainAction;
-
+  // L'azione reale che il sistema aveva suggerito (prima della soglia di confidenza)
+  const baseAction = currentScenario.uncertainAction ?? currentScenario.action;
+  // CONFERMA: mantieni l'azione del sistema. OVERRIDE: invertila.
+  let finalAction: ActionType = baseAction as ActionType;
   if (decision === 'OVERRIDE') {
-    finalAction = finalAction === 'GO' ? 'STOP' : 'GO';
+    finalAction = (finalAction === 'GO' || finalAction === 'INTERVENT') ? 'STOP' : 'GO';
   }
 
   // Update the Action Panel with the final decision

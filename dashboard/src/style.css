@@ -44,3 +44,29 @@
   color: #f59e0b; /* amber-500 */
   filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.8));
 }
+
+/* Full-screen ambient color wash */
+.state-go {
+  background-color: #052e16; /* green-950 */
+  box-shadow: inset 0 0 200px rgba(34, 197, 94, 0.15);
+}
+.state-stop {
+  background-color: #1c0000;
+  box-shadow: inset 0 0 200px rgba(239, 68, 68, 0.25);
+}
+.state-neutral {
+  background-color: #111827; /* gray-900 */
+}
+
+/* Colored border on panels */
+.panel-go   { border-color: rgba(34, 197, 94, 0.45) !important; }
+.panel-stop { border-color: rgba(239, 68, 68, 0.45) !important; }
+
+/* Full-screen vignette overlay at the bottom of the z-stack */
+#color-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.5s ease;
+}
