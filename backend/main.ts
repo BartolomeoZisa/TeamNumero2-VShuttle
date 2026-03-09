@@ -92,7 +92,16 @@ if (require.main === module) {
 
   const simEngine = createScenarioGenerator(allScenarios);
 
-  // Simuliamo di srotolare i primi 3 per testare il generatore
+  // Generate the output for the dashboard
+  const outPath = path.resolve('./../dashboard/public/backend_output.json');
+  const results: DashboardOutput[] = [];
+  for (const scenario of allScenarios) {
+      results.push(processScenario(scenario));
+  }
+  fs.writeFileSync(outPath, JSON.stringify(results, null, 2));
+  console.log(`Output scritto con successo in: ${outPath}\n`);
+
+  // Simuliamo di srotolare i primi 3 per testare il generatore in CLI
   for (let i = 0; i < 3; i++) {
     const nextItem = simEngine.next();
     if (!nextItem.done) {

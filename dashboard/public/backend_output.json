@@ -1,0 +1,602 @@
+[
+  {
+    "id_scenario": 70,
+    "raw_text": "ZTL",
+    "cleaned_text": "ZTL",
+    "action": "STOP",
+    "reason": "Vietato: ZTL",
+    "confidence": 0.99
+  },
+  {
+    "id_scenario": 101,
+    "raw_text": "DIVIETO TRANSITO NAVETTE L4",
+    "cleaned_text": "DIVIETO DI TRANSITO NAVETTE L4",
+    "action": "STOP",
+    "reason": "Vietato: DIVIETO DI TRANSITO NAVETTE L4",
+    "confidence": 0.65
+  },
+  {
+    "id_scenario": 57,
+    "raw_text": "ECCETTO MEZZI DI SOCCORSO",
+    "cleaned_text": "ECCETTO MEZZI DI SOCCORSO",
+    "action": "GO",
+    "reason": "Percorso consentito: ECCETTO MEZZI DI SOCCORSO",
+    "confidence": 0.92
+  },
+  {
+    "id_scenario": 91,
+    "raw_text": "PIAZZA DEL DUOMO",
+    "cleaned_text": "PIAZZA DEL DUOMO",
+    "action": "GO",
+    "reason": "Percorso consentito: PIAZZA DEL DUOMO",
+    "confidence": 0.99
+  },
+  {
+    "id_scenario": 40,
+    "raw_text": "ECCETTO FORNITORE DALLE 08:00 ALLE 10:00",
+    "cleaned_text": "ECCETTO FORNITORE DALLE 08:00 ALLE 10:00",
+    "action": "GO",
+    "reason": "Percorso consentito: ECCETTO FORNITORE DALLE 08:00 ALLE 10:00",
+    "confidence": 0.9
+  },
+  {
+    "id_scenario": 3,
+    "raw_text": "ZTL ATTIVA 08:00 - 20:00",
+    "cleaned_text": "ZTL ATTIVA 08:00 - 20:00",
+    "action": "STOP",
+    "reason": "Vietato: ZTL ATTIVA 08:00 - 20:00",
+    "confidence": 0.95
+  },
+  {
+    "id_scenario": 10,
+    "raw_text": "DIVIETO DI TRANSITO ECCETTO BUS",
+    "cleaned_text": "DIVIETO DI TRANSITO ECCETTO BUS",
+    "action": "GO",
+    "reason": "Consentito per la navetta L4: DIVIETO DI TRANSITO ECCETTO BUS",
+    "confidence": 0.91
+  },
+  {
+    "id_scenario": 49,
+    "raw_text": "DIVIETO DI TRANSITO ECCETTO NAVETTE L4",
+    "cleaned_text": "DIVIETO DI TRANSITO ECCETTO NAVETTE",
+    "action": "GO",
+    "reason": "Consentito per la navetta L4: DIVIETO DI TRANSITO ECCETTO NAVETTE",
+    "confidence": 0.96
+  },
+  {
+    "id_scenario": 31,
+    "raw_text": "DIVIETO DI SOSTA 0-24 RIMOZIONE FORZATA",
+    "cleaned_text": "DIVIETO DI SOSTA 0-24 RIMOZIONE FORZATA",
+    "action": "STOP",
+    "reason": "Vietato: DIVIETO DI SOSTA 0-24 RIMOZIONE FORZATA",
+    "confidence": 0.92
+  },
+  {
+    "id_scenario": 61,
+    "raw_text": "MERCATO RIONALE VENERDI 06:00-14:00",
+    "cleaned_text": "MERCATO RIONALE VENERDI 06:00-14:00",
+    "action": "GO",
+    "reason": "Percorso consentito: MERCATO RIONALE VENERDI 06:00-14:00",
+    "confidence": 0.91
+  },
+  {
+    "id_scenario": 93,
+    "raw_text": "ZTL ATTIVA 0-24",
+    "cleaned_text": "ZTL ATTIVA 0-24",
+    "action": "STOP",
+    "reason": "Vietato: ZTL ATTIVA 0-24",
+    "confidence": 0.98
+  },
+  {
+    "id_scenario": 69,
+    "raw_text": "ECCETTO VEICOLI ELETTRICI",
+    "cleaned_text": "ECCETTO VEICOLI ELETTRICI",
+    "action": "GO",
+    "reason": "Percorso consentito: ECCETTO VEICOLI ELETTRICI",
+    "confidence": 0.91
+  },
+  {
+    "id_scenario": 62,
+    "raw_text": "MERCATO RIONALE VENERDI 06:00-14:00",
+    "cleaned_text": "MERCATO RIONALE VENERDI 06:00-14:00",
+    "action": "GO",
+    "reason": "Percorso consentito: MERCATO RIONALE VENERDI 06:00-14:00",
+    "confidence": 0.92
+  },
+  {
+    "id_scenario": 33,
+    "raw_text": "OBBLIGO DI SVOLTA A DESTRA",
+    "cleaned_text": "OBBLIGO DI SVOLTA A DESTRA",
+    "action": "GO",
+    "reason": "Percorso consentito: OBBLIGO DI SVOLTA A DESTRA",
+    "confidence": 0.94
+  },
+  {
+    "id_scenario": 25,
+    "raw_text": "DIVIETO DI TRANSITO MEZZI PESANTI",
+    "cleaned_text": "DIVIETO DI TRANSITO MEZZI PESANTI",
+    "action": "STOP",
+    "reason": "Vietato: DIVIETO DI TRANSITO MEZZI PESANTI",
+    "confidence": 0.93
+  },
+  {
+    "id_scenario": 50,
+    "raw_text": "DIVIETO",
+    "cleaned_text": "DIVIETO",
+    "action": "STOP",
+    "reason": "Vietato: DIVIETO",
+    "confidence": 0.99
+  },
+  {
+    "id_scenario": 13,
+    "raw_text": "ATTENZIONE PEDONI",
+    "cleaned_text": "ATTENZIONE PEDONI",
+    "action": "INTERVENT",
+    "reason": "Moderare la velocità, ATTENZIONE PEDONI",
+    "confidence": 0.86
+  },
+  {
+    "id_scenario": 46,
+    "raw_text": "ZTL 20:00",
+    "cleaned_text": "ZTL 20:00",
+    "action": "STOP",
+    "reason": "Vietato: ZTL 20:00",
+    "confidence": 0.9
+  },
+  {
+    "id_scenario": 30,
+    "raw_text": "DIVIETO DI TRANSITO",
+    "cleaned_text": "DIVIETO DI TRANSITO",
+    "action": "STOP",
+    "reason": "Vietato: DIVIETO DI TRANSITO",
+    "confidence": 0.82
+  },
+  {
+    "id_scenario": 22,
+    "raw_text": "ZTL NOTTURNA 23:00-05:00",
+    "cleaned_text": "ZTL NOTTURNA 23:00-05:00",
+    "action": "GO",
+    "reason": "Il segnale 'ZTL NOTTURNA 23:00-05:00' non è attualmente attivo (Martedì 16:00)",
+    "confidence": 0.93
+  },
+  {
+    "id_scenario": 99,
+    "raw_text": "DIVIETO ACCESSO",
+    "cleaned_text": "DIVIETO DI ACCESSO",
+    "action": "STOP",
+    "reason": "Vietato: DIVIETO DI ACCESSO",
+    "confidence": 0.88
+  },
+  {
+    "id_scenario": 16,
+    "raw_text": "ZTL VARCO NON ATTIVO",
+    "cleaned_text": "ZTL VARCO NON ATTIVO",
+    "action": "GO",
+    "reason": "Il segnale 'ZTL VARCO NON ATTIVO' non è attualmente attivo (Mercoledì 22:45)",
+    "confidence": 0.99
+  },
+  {
+    "id_scenario": 44,
+    "raw_text": "DIVIETO DI ACCESSO MEZZI NON AUTORIZZATI",
+    "cleaned_text": "DIVIETO DI TRANSITO ECCETTO AUTORIZZATI",
+    "action": "GO",
+    "reason": "Consentito per la navetta L4: DIVIETO DI TRANSITO ECCETTO AUTORIZZATI",
+    "confidence": 0.97
+  },
+  {
+    "id_scenario": 79,
+    "raw_text": "DIVIETO DI ACCESSO",
+    "cleaned_text": "DIVIETO DI ACCESSO",
+    "action": "STOP",
+    "reason": "Vietato: DIVIETO DI ACCESSO",
+    "confidence": 0.69
+  },
+  {
+    "id_scenario": 17,
+    "raw_text": "ECCETTO RESIDENTI",
+    "cleaned_text": "ECCETTO RESIDENTI",
+    "action": "GO",
+    "reason": "Percorso consentito: ECCETTO RESIDENTI",
+    "confidence": 0.9
+  },
+  {
+    "id_scenario": 48,
+    "raw_text": "ROTATORIA",
+    "cleaned_text": "ROTATORIA",
+    "action": "INTERVENT",
+    "reason": "Moderare la velocità, ROTATORIA",
+    "confidence": 0.67
+  },
+  {
+    "id_scenario": 42,
+    "raw_text": "LAVORI IN CORSO A 100M",
+    "cleaned_text": "LAVORI IN CORSO A 100M",
+    "action": "INTERVENT",
+    "reason": "Moderare la velocità, LAVORI IN CORSO A 100M",
+    "confidence": 0.96
+  },
+  {
+    "id_scenario": 28,
+    "raw_text": "DOSSO ARTIFICIALE",
+    "cleaned_text": "DOSSO ARTIFICIALE",
+    "action": "INTERVENT",
+    "reason": "Moderare la velocità, DOSSO ARTIFICIALE",
+    "confidence": 0.92
+  },
+  {
+    "id_scenario": 55,
+    "raw_text": "DIVIETO DI ACCESSO DAL LUNEDI AL VENERDI",
+    "cleaned_text": "DIVIETO DI ACCESSO DAL LUNEDI AL VENERDI",
+    "action": "STOP",
+    "reason": "Vietato: DIVIETO DI ACCESSO DAL LUNEDI AL VENERDI",
+    "confidence": 0.94
+  },
+  {
+    "id_scenario": 83,
+    "raw_text": "PARCHEGGIO A PAGAMENTO",
+    "cleaned_text": "PARCHEGGIO A PAGAMENTO",
+    "action": "INTERVENT",
+    "reason": "Avviso: PARCHEGGIO A PAGAMENTO",
+    "confidence": 0.92
+  },
+  {
+    "id_scenario": 71,
+    "raw_text": "ZTL",
+    "cleaned_text": "ZTL",
+    "action": "STOP",
+    "reason": "Vietato: ZTL",
+    "confidence": 0.85
+  },
+  {
+    "id_scenario": 2,
+    "raw_text": "DIVIETO DI ACCESSO ECCETTO BUS",
+    "cleaned_text": "DIVIETO DI ACCESSO ECCETTO BUS",
+    "action": "GO",
+    "reason": "Consentito per la navetta L4: DIVIETO DI ACCESSO ECCETTO BUS",
+    "confidence": 0.93
+  },
+  {
+    "id_scenario": 59,
+    "raw_text": "SENSO UNICO ALTERNATO",
+    "cleaned_text": "SENSO UNICO ALTERNATO",
+    "action": "GO",
+    "reason": "Percorso consentito: SENSO UNICO ALTERNATO",
+    "confidence": 0.51
+  },
+  {
+    "id_scenario": 26,
+    "raw_text": "PASSAGGIO A LIVELLO",
+    "cleaned_text": "PASSAGGIO A LIVELLO",
+    "action": "GO",
+    "reason": "Percorso consentito: PASSAGGIO A LIVELLO",
+    "confidence": 0.9
+  },
+  {
+    "id_scenario": 68,
+    "raw_text": "ACCESSO CONSENTITO AI VEICOLI ELETTRICI",
+    "cleaned_text": "ACCESSO CONSENTITO AI VEICOLI ELETTRICI",
+    "action": "GO",
+    "reason": "Percorso consentito: ACCESSO CONSENTITO AI VEICOLI ELETTRICI",
+    "confidence": 0.94
+  },
+  {
+    "id_scenario": 38,
+    "raw_text": "ZONA 30",
+    "cleaned_text": "ZONA 30",
+    "action": "GO",
+    "reason": "Percorso consentito: ZONA 30",
+    "confidence": 0.71
+  },
+  {
+    "id_scenario": 39,
+    "raw_text": "DIVIETO DI FERMATA",
+    "cleaned_text": "DIVIETO DI FERMATA",
+    "action": "STOP",
+    "reason": "Vietato: DIVIETO DI FERMATA",
+    "confidence": 0.95
+  },
+  {
+    "id_scenario": 82,
+    "raw_text": "STAZIONE FERROVIARIA",
+    "cleaned_text": "STAZIONE FERROVIARIA",
+    "action": "INTERVENT",
+    "reason": "Avviso: STAZIONE FERROVIARIA",
+    "confidence": 0.58
+  },
+  {
+    "id_scenario": 100,
+    "raw_text": "LAVORI",
+    "cleaned_text": "LAVORI",
+    "action": "INTERVENT",
+    "reason": "Moderare la velocità, LAVORI",
+    "confidence": 0.97
+  },
+  {
+    "id_scenario": 85,
+    "raw_text": "CENTRO STORICO",
+    "cleaned_text": "CENTRO STORICO",
+    "action": "INTERVENT",
+    "reason": "Avviso: CENTRO STORICO",
+    "confidence": 0.98
+  },
+  {
+    "id_scenario": 32,
+    "raw_text": "ATTENZIONE BAMBINI SCUOLA",
+    "cleaned_text": "ATTENZIONE BAMBINI SCUOLA",
+    "action": "INTERVENT",
+    "reason": "Moderare la velocità, ATTENZIONE BAMBINI SCUOLA",
+    "confidence": 0.9
+  },
+  {
+    "id_scenario": 54,
+    "raw_text": "VARCO INATTIVO",
+    "cleaned_text": "ZTL VARCO NON ATTIVO",
+    "action": "GO",
+    "reason": "Il segnale 'ZTL VARCO NON ATTIVO' non è attualmente attivo (Sabato 16:30)",
+    "confidence": 0.92
+  },
+  {
+    "id_scenario": 5,
+    "raw_text": "LAVORI IN CORSO",
+    "cleaned_text": "LAVORI IN CORSO",
+    "action": "INTERVENT",
+    "reason": "Moderare la velocità, LAVORI IN CORSO",
+    "confidence": 0.91
+  },
+  {
+    "id_scenario": 24,
+    "raw_text": "AREA PEDONALE",
+    "cleaned_text": "AREA PEDONALE",
+    "action": "INTERVENT",
+    "reason": "Avviso: AREA PEDONALE",
+    "confidence": 0.65
+  },
+  {
+    "id_scenario": 96,
+    "raw_text": "ZTL SPERIMENTALE",
+    "cleaned_text": "ZTL SPERIMENTALE",
+    "action": "STOP",
+    "reason": "Vietato: ZTL SPERIMENTALE",
+    "confidence": 0.87
+  },
+  {
+    "id_scenario": 97,
+    "raw_text": "ZTL ATTIVA 18:00-24:00",
+    "cleaned_text": "ZTL ATTIVA 18:00-24:00",
+    "action": "STOP",
+    "reason": "Vietato: ZTL ATTIVA 18:00-24:00",
+    "confidence": 0.97
+  },
+  {
+    "id_scenario": 103,
+    "raw_text": "ZTL ATTIVA ECCETTO NAVETTE L4",
+    "cleaned_text": "ZTL ATTIVA ECCETTO NAVETTE L4",
+    "action": "GO",
+    "reason": "Consentito per la navetta L4: ZTL ATTIVA ECCETTO NAVETTE L4",
+    "confidence": 0.88
+  },
+  {
+    "id_scenario": 90,
+    "raw_text": "TUTTE LE DIREZIONI",
+    "cleaned_text": "TUTTE LE DIREZIONI",
+    "action": "GO",
+    "reason": "Percorso consentito: TUTTE LE DIREZIONI",
+    "confidence": 0.95
+  },
+  {
+    "id_scenario": 45,
+    "raw_text": "ZTL 20:00",
+    "cleaned_text": "ZTL 20:00",
+    "action": "STOP",
+    "reason": "Vietato: ZTL 20:00",
+    "confidence": 0.91
+  },
+  {
+    "id_scenario": 53,
+    "raw_text": "VARCO ATTIVO",
+    "cleaned_text": "ZTL VARCO ATTIVO",
+    "action": "STOP",
+    "reason": "Vietato: ZTL VARCO ATTIVO",
+    "confidence": 0.93
+  },
+  {
+    "id_scenario": 78,
+    "raw_text": "ZTL ATTIVA 22:00 - 06:00",
+    "cleaned_text": "ZTL ATTIVA 22:00 - 06:00",
+    "action": "GO",
+    "reason": "Il segnale 'ZTL ATTIVA 22:00 - 06:00' non è attualmente attivo (Mercoledì 10:00)",
+    "confidence": 0.92
+  },
+  {
+    "id_scenario": 76,
+    "raw_text": "DIVIETO DI TRANSITO PER VEICOLI A MOTORE",
+    "cleaned_text": "DIVIETO DI TRANSITO PER VEICOLI A MOTORE",
+    "action": "STOP",
+    "reason": "Vietato: DIVIETO DI TRANSITO PER VEICOLI A MOTORE",
+    "confidence": 0.9
+  },
+  {
+    "id_scenario": 4,
+    "raw_text": "ZTL ATTIVA 08:00 - 20:00",
+    "cleaned_text": "ZTL ATTIVA 08:00 - 20:00",
+    "action": "GO",
+    "reason": "Il segnale 'ZTL ATTIVA 08:00 - 20:00' non è attualmente attivo (Giovedì 21:30)",
+    "confidence": 0.97
+  },
+  {
+    "id_scenario": 88,
+    "raw_text": "ZTL SOLO GIORNI FESTIVI",
+    "cleaned_text": "ZTL SOLO GIORNI FESTIVI",
+    "action": "STOP",
+    "reason": "Vietato: ZTL SOLO GIORNI FESTIVI",
+    "confidence": 0.9
+  },
+  {
+    "id_scenario": 66,
+    "raw_text": "FINE ZTL",
+    "cleaned_text": "FINE ZTL",
+    "action": "STOP",
+    "reason": "Vietato: FINE ZTL",
+    "confidence": 0.99
+  },
+  {
+    "id_scenario": 104,
+    "raw_text": "NAVETTE L4 NOTTE",
+    "cleaned_text": "NAVETTE L4 NOTTE",
+    "action": "GO",
+    "reason": "Percorso consentito: NAVETTE L4 NOTTE",
+    "confidence": 0.76
+  },
+  {
+    "id_scenario": 81,
+    "raw_text": "STAZIONE FERROVIARIA",
+    "cleaned_text": "STAZIONE FERROVIARIA",
+    "action": "INTERVENT",
+    "reason": "Avviso: STAZIONE FERROVIARIA",
+    "confidence": 0.98
+  },
+  {
+    "id_scenario": 18,
+    "raw_text": "LIMITE MASSIMO 30 KM/H",
+    "cleaned_text": "LIMITE MASSIMO 30 KM/H",
+    "action": "GO",
+    "reason": "Percorso consentito: LIMITE MASSIMO 30 KM/H",
+    "confidence": 0.97
+  },
+  {
+    "id_scenario": 58,
+    "raw_text": "SENSO UNICO ALTERNATO",
+    "cleaned_text": "SENSO UNICO ALTERNATO",
+    "action": "GO",
+    "reason": "Percorso consentito: SENSO UNICO ALTERNATO",
+    "confidence": 0.89
+  },
+  {
+    "id_scenario": 84,
+    "raw_text": "DIVIETO DI AFFISSIONE",
+    "cleaned_text": "DIVIETO DI AFFISSIONE",
+    "action": "STOP",
+    "reason": "Vietato: DIVIETO DI AFFISSIONE",
+    "confidence": 0.83
+  },
+  {
+    "id_scenario": 23,
+    "raw_text": "AREA PEDONALE",
+    "cleaned_text": "AREA PEDONALE",
+    "action": "INTERVENT",
+    "reason": "Avviso: AREA PEDONALE",
+    "confidence": 0.96
+  },
+  {
+    "id_scenario": 11,
+    "raw_text": "SENSO VIETATO",
+    "cleaned_text": "SENSO VIETATO",
+    "action": "STOP",
+    "reason": "Vietato: SENSO VIETATO",
+    "confidence": 0.98
+  },
+  {
+    "id_scenario": 1,
+    "raw_text": "DIVIETO DI ACCESSO",
+    "cleaned_text": "DIVIETO DI ACCESSO",
+    "action": "STOP",
+    "reason": "Vietato: DIVIETO DI ACCESSO",
+    "confidence": 0.96
+  },
+  {
+    "id_scenario": 14,
+    "raw_text": "STRADA SENZA USCITA",
+    "cleaned_text": "STRADA SENZA USCITA",
+    "action": "GO",
+    "reason": "Percorso consentito: STRADA SENZA USCITA",
+    "confidence": 0.89
+  },
+  {
+    "id_scenario": 94,
+    "raw_text": "DIVIETO DI ACCESSO",
+    "cleaned_text": "DIVIETO DI ACCESSO",
+    "action": "STOP",
+    "reason": "Vietato: DIVIETO DI ACCESSO",
+    "confidence": 0.78
+  },
+  {
+    "id_scenario": 29,
+    "raw_text": "RALLENTARE",
+    "cleaned_text": "RALLENTARE",
+    "action": "INTERVENT",
+    "reason": "Moderare la velocità, RALLENTARE",
+    "confidence": 0.94
+  },
+  {
+    "id_scenario": 72,
+    "raw_text": "DIVIETO DI SCARICO RIFIUTI",
+    "cleaned_text": "DIVIETO DI SCARICO RIFIUTI",
+    "action": "STOP",
+    "reason": "Vietato: DIVIETO DI SCARICO RIFIUTI",
+    "confidence": 0.92
+  },
+  {
+    "id_scenario": 89,
+    "raw_text": "ZTL SOLO GIORNI FESTIVI",
+    "cleaned_text": "ZTL SOLO GIORNI FESTIVI",
+    "action": "GO",
+    "reason": "Il segnale 'ZTL SOLO GIORNI FESTIVI' non è attualmente attivo (Martedì 14:20)",
+    "confidence": 0.91
+  },
+  {
+    "id_scenario": 63,
+    "raw_text": "MERCATO RIONALE VENERDI 06:00-14:00",
+    "cleaned_text": "MERCATO RIONALE VENERDI 06:00-14:00",
+    "action": "GO",
+    "reason": "Percorso consentito: MERCATO RIONALE VENERDI 06:00-14:00",
+    "confidence": 0.9
+  },
+  {
+    "id_scenario": 95,
+    "raw_text": "STRADA SDISSESTATA LIMITE 10 KM/H",
+    "cleaned_text": "STRADA DISSESTATA LIMITE 10 KM/H",
+    "action": "INTERVENT",
+    "reason": "Moderare la velocità, STRADA DISSESTATA LIMITE 10 KM/H",
+    "confidence": 0.87
+  },
+  {
+    "id_scenario": 37,
+    "raw_text": "ZONA 30",
+    "cleaned_text": "ZONA 30",
+    "action": "GO",
+    "reason": "Percorso consentito: ZONA 30",
+    "confidence": 0.99
+  },
+  {
+    "id_scenario": 105,
+    "raw_text": null,
+    "cleaned_text": null,
+    "action": "GO",
+    "reason": "Nessun cartello o sensori offline",
+    "confidence": 1
+  },
+  {
+    "id_scenario": 41,
+    "raw_text": "ECCETTO FORNITORE DALLE 08:00 ALLE 10:00",
+    "cleaned_text": "ECCETTO FORNITORE DALLE 08:00 ALLE 10:00",
+    "action": "GO",
+    "reason": "Percorso consentito: ECCETTO FORNITORE DALLE 08:00 ALLE 10:00",
+    "confidence": 0.91
+  },
+  {
+    "id_scenario": 9,
+    "raw_text": "DIVIETO DI TRANSITO ECCETTO AUTORIZZATI",
+    "cleaned_text": "DIVIETO DI TRANSITO ECCETTO AUTORIZZATI",
+    "action": "GO",
+    "reason": "Consentito per la navetta L4: DIVIETO DI TRANSITO ECCETTO AUTORIZZATI",
+    "confidence": 0.88
+  },
+  {
+    "id_scenario": 73,
+    "raw_text": "DIVIETO DI ACCESSO ECCETTO BUS E TAXI",
+    "cleaned_text": "DIVIETO DI ACCESSO ECCETTO BUS E TAXI",
+    "action": "GO",
+    "reason": "Consentito per la navetta L4: DIVIETO DI ACCESSO ECCETTO BUS E TAXI",
+    "confidence": 0.93
+  }
+]

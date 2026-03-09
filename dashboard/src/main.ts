@@ -1,7 +1,7 @@
 import './style.css';
 
 // --- Types ---
-type ActionType = 'GO' | 'STOP' | 'INTERVENTO';
+type ActionType = 'GO' | 'STOP' | 'INTERVENTO' | 'INTERVENT';
 type ConfidenceLevel = 'high' | 'medium' | 'low';
 
 interface Scenario {
@@ -13,46 +13,8 @@ interface Scenario {
   confidenceLevel: ConfidenceLevel;
 }
 
-// --- Mock Data ---
-const mockScenarios: Scenario[] = [
-  {
-    id: 1,
-    parsedText: "Nessun ostacolo rilevato. Semaforo verde.",
-    action: "GO",
-    confidenceNum: 95,
-    confidenceLevel: 'high'
-  },
-  {
-    id: 2,
-    parsedText: "Pedone sulle strisce pedonali. Distanza 5m.",
-    action: "STOP",
-    confidenceNum: 92,
-    confidenceLevel: 'high'
-  },
-  {
-    id: 3,
-    parsedText: "Cartello parzialmente coperto: Divieto di transito... [Dati telecamera laterale in conflitto].",
-    action: "INTERVENTO",
-    uncertainAction: "STOP",
-    confidenceNum: 45,
-    confidenceLevel: 'low'
-  },
-  {
-    id: 4,
-    parsedText: "Veicolo fermo in corsia. Possibilità di sorpasso sicura.",
-    action: "GO",
-    confidenceNum: 88,
-    confidenceLevel: 'high'
-  },
-  {
-    id: 5,
-    parsedText: "Lavori in corso. Sensori V2I disconnessi. Visibilità ridotta.",
-    action: "INTERVENTO",
-    uncertainAction: "GO",
-    confidenceNum: 60,
-    confidenceLevel: 'medium'
-  }
-];
+// --- Mock Data Removed: We fetch from backend instead ---
+let liveScenarios: Scenario[] = [];
 
 // --- DOM Elements ---
 const appEl = document.getElementById('app') as HTMLDivElement;
@@ -133,17 +95,50 @@ function stopSimulation() {
   hideTimerOverlay();
 }
 
-function nextScenario() {
+async function fetchScenarios() {
+  try {
+    const response = await fetch('/backend_output.json?t=' + new Date().getTime());
+    const data = await response.json();
+    liveScenarios = data.map((item: any) => {
+      const confidencePercent = Math.round(item.confidence * 100);
+      let level: ConfidenceLevel = 'low';
+      if (confidencePercent > 80) level = 'high';
+      else if (confidencePercent >= 40) level = 'medium';
+
+      return {
+        id: item.id_scenario,
+        parsedText: item.reason,
+        action: item.action === 'INTERVENT' ? 'INTERVENTO' : item.action, // Normalize backend 'INTERVENT' to frontend 'INTERVENTO'
+        // Optional: derive uncertainAction context from backend raw text if needed, for now default to STOP
+        uncertainAction: (item.action === 'INTERVENTO' || item.action === 'INTERVENT') ? 'STOP' : undefined,
+        confidenceNum: confidencePercent,
+        confidenceLevel: level
+      } as Scenario;
+    });
+  } catch(e) {
+    console.warn("Failed to fetch scenarios", e);
+  }
+}
+
+async function nextScenario() {
   if (!isSimulationRunning) return;
+
+  // Ad ogni ciclo chiediamo il file aggiornato
+  await fetchScenarios();
 
   currentScenarioIndex++;
 
+  if (liveScenarios.length === 0) {
+    autoAdvanceTimer = window.setTimeout(() => nextScenario(), 4000);
+    return;
+  }
+
   // If we reached the end, loop back or stop
-  if (currentScenarioIndex >= mockScenarios.length) {
+  if (currentScenarioIndex >= liveScenarios.length) {
     currentScenarioIndex = 0; // Loop indefinitely for continuous simulation
   }
 
-  const scenario = mockScenarios[currentScenarioIndex];
+  const scenario = liveScenarios[currentScenarioIndex];
   renderScenario(scenario);
 
   if (scenario.action === 'GO' || scenario.action === 'STOP') {
@@ -220,7 +215,7 @@ function requestHumanIntervention() {
     timerOverlay.classList.remove('opacity-0');
   });
 
-  const currentScenario = mockScenarios[currentScenarioIndex];
+  const currentScenario = liveScenarios[currentScenarioIndex];
   const overlaySuggestedAction = document.getElementById('overlay-suggested-action') as HTMLDivElement;
 
   if (currentScenario.action === 'INTERVENTO') {
@@ -257,7 +252,7 @@ function handleHumanIntervention(decision: 'OVERRIDE' | 'CONFERMA') {
   sysStatusText.textContent = 'RUNNING';
   sysStatusText.classList.replace('bg-amber-600', 'bg-green-600');
 
-  const currentScenario = mockScenarios[currentScenarioIndex];
+  const currentScenario = liveScenarios[currentScenarioIndex];
   let finalAction = currentScenario.uncertainAction;
 
   if (decision === 'OVERRIDE') {
