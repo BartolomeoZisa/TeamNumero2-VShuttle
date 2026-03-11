@@ -143,3 +143,37 @@ VShuttle/
 - **Testing:** Jest per unit test
 - **Data Processing:** JSON streaming, algoritmi di string matching
 
+## Crediti:
+
+- **Massimo** **Nicastro**, Sviluppo Front End
+- **Giuseppe** **Nozza**,
+- **Bartolomeo** **Zisa**, Sviluppo Back End
+
+## Metodologia
+
+Dopo aver letto il testo abbiamo deciso di darlo a Gemini al fine di fargli creare
+Dei bullet point che dividevano le feature tra le più e le meno critiche.
+
+Poi basandoci su quei bullet point abbiamo fatto creare all'IA un
+prompt che lei stessa avrebbe usato per sviluppare quei punti.
+Dopo ciò Massimo si è occupato di istruire l'IA con il prompt per la
+creazione del front end, mentre Giuseppe Nozza e Bartolomeo Zisa l'hanno istruita per la creazione del back end.
+Durante lo sviluppo ci siamo informati periodicamente sulla direzione che il back end
+stava prendendo e di quella del front end, al fine di rendere la loro unione il 
+più immediata possibile.
+
+Dopo aver ultimato i due lati del progetto, li abbiamo spinti sulla repository
+e poi uniti con l'uso dell'IA.
+
+In fine anche per genereare il readME e le istruzione per far compilare
+ci siamo serviti degli LLM, dandogli il progetto che avevamo fatto.
+
+## Immagini
+<img width="1366" height="768" alt="2026-03-11-14_06_15-screenshot" src="https://github.com/user-attachments/assets/a1bf53bb-5474-4ec1-8aea-2ea4316b6590" />
+<img width="1366" height="768" alt="2026-03-11-14_06_18-screenshot" src="https://github.com/user-attachments/assets/e316264a-a874-4641-8ab7-8999ab3afd8f" />
+<img width="1366" height="768" alt="2026-03-11-14_06_21-screenshot" src="https://github.com/user-attachments/assets/d9456c81-f9d7-4e40-9d46-2017fe620dcf" />
+<img width="1366" height="768" alt="2026-03-11-14_06_24-screenshot" src="https://github.com/user-attachments/assets/ceebbe4d-b4c4-46ac-817d-8797fc3d52e8" />
+<img width="1366" height="768" alt="2026-03-11-14_06_26-screenshot" src="https://github.com/user-attachments/assets/7b784ef3-f2b9-48a2-a87c-76600c534060" />
+
+
+
